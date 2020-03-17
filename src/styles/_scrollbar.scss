@@ -1,0 +1,25 @@
+.ps__thumb-y,
+.ps__thumb-x {
+  @include single-prop-themify('background-color', 'scrollbarThumbBackgroundColor');
+}
+
+.ps__rail-x,
+.ps__rail-y,
+.ps__rail-x:hover,
+.ps__rail-x:focus,
+.ps__rail-y:hover,
+.ps__rail-y:focus {
+  background: transparent !important;
+  z-index: 100;
+}
+
+.ps__rail-x:hover > .ps__thumb-x,
+.ps__rail-x:focus > .ps__thumb-x,
+.ps__rail-x.ps--clicking .ps__thumb-x,
+.ps__rail-y:hover > .ps__thumb-y,
+.ps__rail-y:focus > .ps__thumb-y,
+.ps__rail-y.ps--clicking .ps__thumb-y {
+  border-width: 1px ;
+  border-style: solid;
+  @include single-prop-themify('border-color', 'scrollbarThumbBorderColor');
+}

@@ -1,0 +1,12 @@
+// Options
+//
+// Quickly modify global styling by enabling or disabling optional features.
+
+$enable-rounded:                      true;
+$enable-border:                       true;
+$enable-transitions:                  true;
+
+// Typography
+
+// Disable RFS by setting $enable-responsive-font-sizes to false
+$enable-responsive-font-sizes: true !default;

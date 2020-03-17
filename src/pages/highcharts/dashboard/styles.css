@@ -1,0 +1,12 @@
+
+.dashboard-body {
+  background-color: transparent;
+  height: calc(100vh - 40px);
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-around;
+  font-size: calc(10px + 2vmin);
+  color: black;
+  overflow: hidden;
+}

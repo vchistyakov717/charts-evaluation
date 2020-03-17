@@ -1,0 +1,80 @@
+.form-control:focus {
+  border-color: inherit;
+  -webkit-box-shadow: none;
+  box-shadow: none;
+}
+
+.search {
+  &-input-group {
+    margin-top:4px;
+    max-width:300px;
+    float: right;
+    background: $input-text-bg;
+    font-weight: $font-weight-bold;
+    @if ($enable-rounded) {
+      @include border-radius($border-radius);
+    }
+    @if ($enable-border) {
+    border: 1px solid $input-text-border-color;
+    }
+  }
+
+  &-input-group-addon {
+    padding: 9px;
+    color: $white;
+    @include responsive-font-size($font-size-lg);
+    @if ($enable-rounded) {
+      @include border-radius($border-radius 0px 0px $border-radius);
+    }
+    height: 33px;
+  }
+
+  &-input {
+    background: $input-text-bg;
+    border: 0px;
+    border-left: 1px solid $input-text-border-color;
+    color: $white;
+    @include responsive-font-size($font-size-base);
+    font-weight: $font-weight-bold;
+    @if ($enable-rounded) {
+      @include border-radius(0px $border-radius $border-radius 0px);
+    }
+
+    &:focus {
+      background: $input-text-bg;
+      color: $white;
+    }
+  }
+}
+
+input[disabled] {
+  background: $input-text-bg !important;
+  cursor: not-allowed;
+}
+
+.text {
+  &-input {
+    background: $input-text-bg;
+    color: $white;
+
+    @if ($enable-rounded) {
+      @include border-radius($border-radius-xs);
+    }
+
+    @if ($enable-border) {
+      border: 1px solid $input-text-border-color;
+    }
+    
+    @include responsive-font-size($font-size-base);
+    font-weight: $font-weight-bold;
+    @if ($enable-rounded) {
+      @include border-radius($border-radius-xs);
+    }
+
+    &:focus {
+      background: $input-text-bg;
+      border: 1px solid $input-text-border-color;
+      color: $white;
+    }
+  }
+}

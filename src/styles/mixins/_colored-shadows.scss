@@ -1,0 +1,14 @@
+$bmd-shadow-umbra-opacity: 0.2 !default;
+$bmd-shadow-penumbra-opacity: 0.14 !default;
+$bmd-shadow-ambient-opacity: 0.12 !default;
+$mdb-shadow-key-umbra-opacity: 0.2 !default;
+$mdb-shadow-key-penumbra-opacity: 0.14 !default;
+$mdb-shadow-ambient-shadow-opacity: 0.12 !default;
+
+@mixin shadow-sidebar($color) {
+  @if ($color == $light-bg-color) {
+    box-shadow: 0 16px 38px -12px rgba(0, 0, 0, $bmd-shadow-penumbra-opacity * 4),
+      0 4px 25px 0px rgba(0, 0, 0, $bmd-shadow-ambient-opacity),
+      0 8px 10px -5px rgba(0, 0, 0, $bmd-shadow-umbra-opacity);
+  }
+}

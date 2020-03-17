@@ -1,0 +1,152 @@
+// // Colors
+// $dpm-color0:                        #1f2932;
+// $dpm-color1:                        #5a656f;
+// $dpm-color2:                        #32404c;
+// $dpm-color3:                        #25303A;
+// $dpm-color4:                        #989f94;
+// $dpm-color5:                        #98a6ad;
+// $dpm-color6:                        #171e24; //rgba(0,0,0,.2);
+// $dpm-color7:                        #2d3a45;
+// $dpm-color8:                        #adb2b7;
+// $dpm-color9:                        #182026;
+// $dpm-color10:                       #936b22;
+// $dpm-color11:                       #a9afb5;
+// $dpm-color12:                       #7a868f;
+// $dpm-color13:                       #efc302;
+// $dpm-color14:                       #a1b0b7;
+// $dpm-color15:                       #a3a3a3;
+// $dpm-color16:                       #394c57;
+// $dpm-color17:                       #394856;
+// $dpm-color18:                       #d3d3d3;
+// $dpm-color19:                       #028bef;
+// $dpm-color20:                       #6a7e86;
+// $dpm-color21:                       #28343f;
+// $dpm-color22:                       #007bff;
+// $dpm-color23:                       #096ab2;
+// $dpm-color24:                       #8d67ca;
+// $dpm-color25:                       #71b6f9;
+
+// // Fonts
+// $font-weight-normal: normal !default;
+// $font-weight-bold: bold !default;
+
+// $font-weight-base: $font-weight-normal !default;
+// $line-height-base: 1.5 !default;
+
+// $font-size-lg:        1rem !default; //16px
+// $font-size-md:        .875rem !default; //14px
+// $font-size-sm:        .75rem !default; //12px
+// $font-size-extra-sm:  0.625rem !default; //10px
+
+// Components
+//
+// Define common padding and border radius sizes and more.
+
+$line-height-lg:         1.5 !default;
+$line-height-sm:         1.5 !default;
+
+$border-width:           1px !default;
+
+$border-radius:          .25rem !default;
+$border-radius-lg:       .3rem !default;
+$border-radius-sm:       .2rem !default;
+$border-radius-xs:       .15rem !default;
+
+$caret-width:            .3em !default;
+
+//Login
+$login-page-title-color:             #fff;
+$login-page-btn-width:               40%;
+$login-page-title-margin-bottom:     0px;
+$login-page-btn-max-width:           400px;
+$login-page-btn-min-width:           250px;
+$login-page-btn-padding:             10px;
+$login-page-logo-scaling-width:      100%;
+
+// Layout
+$left-side-section-width:            180px !default;
+$right-side-section-width:           280px !default;
+$header-height:                      55px !default;
+
+// Mains title
+$main-title-height:                  30px !default;
+
+// Navbar
+$navbar-height:                      $header-height !default;
+$navbar-toggler-icon:                 str-replace(url('../styles/images/arrow-right.svg'), "#", "%23") !default;
+$navbar-toggler-icon-hover:           str-replace(url('../styles/images/arrow-right-hover.svg'), "#", "%23") !default;
+$navbar-brand-width:                  $left-side-section-width !default;
+$navbar-mobile-bg:                     black; //_palette(bg_brand) !default;
+$navbar-brand-logo:                   url('../styles/images/logo.svg') !default;
+$navbar-brand-logo-size:              150px auto !default;
+
+$navbar-brand-minimized-width:        50px !default;
+$navbar-brand-minimized-logo:         url('../styles/images/logo-symbol.svg') !default;
+$navbar-brand-minimized-logo-size:    44px !default;
+
+// Sidebar
+$sidebar-width:                       $left-side-section-width !default;
+$sidebar-padding:                     0 !default;
+$sidebar-minimized-width:             50px !default;
+
+// Sidebar Navigation
+$sidebar-nav-link-hover-color:        #fff !default;
+$sidebar-nav-link-color:              #98a6ad !default;
+$sidebar-nav-color:                   $white !default;
+$sidebar-nav-title-padding-y:         .75rem !default;
+$sidebar-nav-title-padding-x:         1rem !default;
+$sidebar-nav-title-color:             $gray-200 !default;
+$sidebar-nav-link-padding-y:          .75rem !default;
+$sidebar-nav-link-padding-x:          1rem !default;
+$sidebar-nav-link-font-weight:        bold;
+$sidebar-nav-link-font-size:          13px;
+$sidebar-nav-link-bg:                 transparent !default;
+$sidebar-nav-link-icon-color:         $gray-600 !default;
+$sidebar-nav-link-borders:            0 !default;
+
+$sidebar-nav-link-hover-color:        #fff !default;
+$sidebar-nav-link-hover-bg:           #a2b00c !default;
+$sidebar-nav-link-hover-icon-color:   #fff !default;
+$sidebar-nav-link-hover-borders:      0 !default;
+
+$sidebar-nav-link-active-color:       #a2b00c !default;
+$sidebar-nav-link-active-bg:          lighten(#25303A, 5%) !default;
+$sidebar-nav-link-active-icon-color:  #a2b00c !default;
+$sidebar-nav-link-active-borders:     0 !default;
+
+$sidebar-nav-dropdown-color:          #98a6ad !default;
+$sidebar-nav-dropdown-bg:             transparent !default; //$dpm-color6 !default;
+$sidebar-nav-dropdown-borders:        0 !default;
+
+$sidebar-nav-dropdown-indicator-color:  $gray-600 !default;
+$sidebar-nav-dropdown-indicator:      str-replace(url("data:image/svg+xml;charset=utf8,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 11 14'%3E%3Cpath fill='#{$sidebar-nav-dropdown-indicator-color}' d='M9.148 2.352l-4.148 4.148 4.148 4.148q0.148 0.148 0.148 0.352t-0.148 0.352l-1.297 1.297q-0.148 0.148-0.352 0.148t-0.352-0.148l-5.797-5.797q-0.148-0.148-0.148-0.352t0.148-0.352l5.797-5.797q0.148-0.148 0.352-0.148t0.352 0.148l1.297 1.297q0.148 0.148 0.148 0.352t-0.148 0.352z'/%3E%3C/svg%3E"), "#", "%23") !default;
+$sidebar-nav-dropdown-indicator-hover-color: yellow;
+$sidebar-nav-dropdown-indicator-hover:str-replace(url("data:image/svg+xml;charset=utf8,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 11 14'%3E%3Cpath fill='#{$sidebar-nav-dropdown-indicator-hover-color}' d='M9.148 2.352l-4.148 4.148 4.148 4.148q0.148 0.148 0.148 0.352t-0.148 0.352l-1.297 1.297q-0.148 0.148-0.352 0.148t-0.352-0.148l-5.797-5.797q-0.148-0.148-0.148-0.352t0.148-0.352l5.797-5.797q0.148-0.148 0.352-0.148t0.352 0.148l1.297 1.297q0.148 0.148 0.148 0.352t-0.148 0.352z'/%3E%3C/svg%3E"), "#", "%23") !default;
+
+// Sidebar Footer
+$sidebar-footer-height:               40px !default;
+
+// Sidebar Minimizer
+$sidebar-minimizer-height:                42px !default;
+$sidebar-minimizer-borders:               0 !default;
+$sidebar-minimizer-indicator-color:       $gray-600 !default;
+$sidebar-minimizer-indicator:             str-replace(url("data:image/svg+xml;charset=utf8,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 11 14'%3E%3Cpath fill='#{$sidebar-minimizer-indicator-color}' d='M9.148 2.352l-4.148 4.148 4.148 4.148q0.148 0.148 0.148 0.352t-0.148 0.352l-1.297 1.297q-0.148 0.148-0.352 0.148t-0.352-0.148l-5.797-5.797q-0.148-0.148-0.148-0.352t0.148-0.352l5.797-5.797q0.148-0.148 0.352-0.148t0.352 0.148l1.297 1.297q0.148 0.148 0.148 0.352t-0.148 0.352z'/%3E%3C/svg%3E"), "#", "%23") !default;
+
+$sidebar-minimizer-hover-indicator-color: $sidebar-nav-link-hover-color !default;
+$sidebar-minimizer-hover-indicator:       str-replace(url("data:image/svg+xml;charset=utf8,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 11 14'%3E%3Cpath fill='#{$sidebar-minimizer-hover-indicator-color}' d='M9.148 2.352l-4.148 4.148 4.148 4.148q0.148 0.148 0.148 0.352t-0.148 0.352l-1.297 1.297q-0.148 0.148-0.352 0.148t-0.352-0.148l-5.797-5.797q-0.148-0.148-0.148-0.352t0.148-0.352l5.797-5.797q0.148-0.148 0.352-0.148t0.352 0.148l1.297 1.297q0.148 0.148 0.148 0.352t-0.148 0.352z'/%3E%3C/svg%3E"), "#", "%23") !default;
+
+// Client cards
+
+$card-img-width:                    30px;
+$card-bg-color:                     #25303A;
+$card-header-bg-color:              #25303A;
+$card-horizontal-hover-bg-color:    #2d3a45;
+$card-edit-btn-bg-color:            #32404c;
+$card-edit-btn-disabled-bg-color:   #32404c;
+$card-active-border-color:          blue;
+$card-inactive-border-color:        #25303A;
+$card-border-width:                 2px;
+
+// Forms
+$input-text-bg:                      #32404c;;
+$input-text-border-color:            #5a656f;;

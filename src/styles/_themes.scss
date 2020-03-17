@@ -1,0 +1,106 @@
+/*
+ * Theme definitions
+ */
+
+ $light-bg-color: #f0f3f6; //darken(white, 5);
+
+$themes: (
+  light: (
+    backgroundColor: #f0f3f6, //darken(white, 5),
+    backgroundHeaderColor: #1f2932,
+    backgroundSidebarColor: #3a4651, //#f4f7f8,  //#9fa1aa,//lighten(#2c303b, 30),
+    backgroundMenuItemActiveColor: backgroundMenuItemActiveColor, //lighten(#2c303b, 5),
+    backgroundPopupSubmenuColor: lighten(#2c303b, 1%),// #2d3a46,
+    backgroundSidebarBrandColor: #171e24,
+    backgroundSidebarFooterColor: white,
+    backgroundSidebarMinimizerColor: #a2b00c,
+    backgroundSidebarMinimizerHoverColor: lighten(#171e24, 2),
+    backgroundMenuItemHoverColor: #096ab2,
+    
+    textColor: #222,
+    textSidebarColor: #2c303b,
+    textMenuItemActiveColor: #a2b00c,
+    iconMenuItemActiveColor: #a2b00c,
+    textMenuItemDisabledColor: #777,
+    backgroundNavbarMobileColor: black,
+    backgroundHeaderContentColor: transparent, //#d7dde4, //lighten(#171e24, 15),
+    backgroundBrandMobileColor: black,
+    scrollbarThumbBackgroundColor: rgba(0, 0, 0, 0.3),
+    scrollbarThumbBorderColor: rgba(130, 130, 130, 0.3),
+    backgroundClientCard: white, //darken(#f3f4f9, 2),
+    backgroundClientCardHover: darken(white, 2),
+    colorClientCard: #2c303b,  //lighten(#2c303b, 20)
+    backgroundClientCardCompleted: #77dd77
+  ),
+  dark: (
+    backgroundColor: #1f2932,
+    backgroundHeaderColor: #1f2932,
+    backgroundSidebarColor: #25303a,
+    backgroundPopupSubmenuColor: lighten(#25303A, 1%),// #2d3a46,
+    backgroundSidebarBrandColor: #171e24,
+    backgroundSidebarMinimizerColor: #171e24,
+    backgroundSidebarMinimizerHoverColor: lighten(#171e24, 2),
+    backgroundMenuItemHoverColor: #096ab2,
+    backgroundMenuItemActiveColor: lighten(#25303a, 5),
+    backgroundSubMenuPopupColor: #25303a,
+    textColor: #ddd,
+    textSidebarColor: #ddd,
+    textMenuItemColor: #a4b7c1,
+    textMenuItemHoverColor: #ddd,
+    textMenuItemActiveColor: #028bef,
+    iconMenuItemActiveColor: #028bef,
+    textMenuItemDisabledColor: #777,
+    backgroundNavbarMobileColor: black,
+    backgroundHeaderContentColor: transparent,
+    backgroundNavbarTogglerColor: black,
+    backgroundBrandMobileColor: black,
+    scrollbarThumbBackgroundColor: rgba(0, 0, 0, 0.3) !important, 
+    scrollbarThumbBorderColor: rgba(130, 130, 130, 0.3),
+    backgroundClientCard: #25303a,
+    backgroundClientCardHover: lighten(#25303a, 5),
+    colorClientCard: white,
+    backgroundClientCardCompleted: green
+  )
+);
+
+/*
+ * Implementation of themes
+ */
+
+@mixin single-prop-themify($prop, $key, $themeList: $themes) {
+  @each $themeName, $theme in $themeList {
+    $value: map-get($theme, '#{$key}');
+      #{$prop}: $value;
+  }
+}
+
+@mixin themify($themes) {
+  @each $theme, $map in $themes {
+    .theme-#{$theme} & {
+      $theme-map: () !global;
+      @each $key, $submap in $map {
+        $value: map-get(map-get($themes, $theme), '#{$key}');
+        $theme-map: map-merge(
+          $theme-map,
+          (
+            $key: $value
+          )
+        ) !global;
+      }
+      @content;
+      $theme-map: null !global;
+    }
+  }
+}
+
+@function themed($key) {
+  @return map-get($theme-map, $key);
+}
+
+@function map-deep-get($map, $keys...) {
+  $value: $map;
+  @each $key in $keys {
+    $value: map-get($value, $key);
+  }
+  @return $value;
+}
